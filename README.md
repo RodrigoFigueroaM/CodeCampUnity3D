@@ -97,6 +97,7 @@ public class PlayerController : MonoBehaviour {
 						
 }
 ```
+10. Modify the movement speed
 - Go into the Inspector Window and modify the movement speed
 - Select the player and under the Inspector Window there is a Script submenu named 
 Player Controller
