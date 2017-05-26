@@ -16,15 +16,13 @@ We have provided a packet of assets to help build a rolling the ball tutorial.
 	- Once you've created a new project, navigate to the toolbar of your Unity window and
 	click "Assets" > "Import Package" > "Custom Package"
 	- Open the Unity Package that you you installed from GitHub. Click "Import"
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/importPacket.gif)
-	
+
 4. Go back to your Unity3D window and create a new Scene
 	- On the toolbar, click "File" > "New Scene"
 	- Then save the scene as a new scene ("File" > "Save Scene As")
 	- Save your scene under "Assets" > "Scenes"
 	- Scenes contain your objects. Think of them as levels where your objects are present.
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/NewScene.gif)
-	
+
 5. Create the floor
 	- Right click the Hierarchy Window. 
 	- Click "GameObject" > "3D Object" > "Plane"
@@ -37,13 +35,11 @@ We have provided a packet of assets to help build a rolling the ball tutorial.
 	- Click "GameObject" > "3D Object" > "Sphere"
 	- Name the sphere "Player"
 	- Change the y position fo the sphere from 0 to 0.5
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/createPlayer.gif)
-	
+
 7. Add a Rigidbody to the player
 	- This will allow the player to have physics
 	- With the player selected, go to the Inspector Window and click "Add Component" > 
 	"Physics" > "Rigidbody"
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/addRigidBody.gif)
 	
 8. Change the color of the plane to have some contrast between the player and the ground
 	- Navigate to the Project Window
@@ -106,8 +102,8 @@ public class PlayerController : MonoBehaviour {
 
 12. Position the main Camera
 	- Navigate to the Hierarchy Window and position and rotate your camera so that you have a
-	bird's eye view of the player
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/changeCameraPosition.gif)
+	bird's eye view of the player!
+	[alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/changeCameraPosition.gif)
 
 	- Now we need to make the camera follow the player
 	- Navigate to the Project Window
@@ -115,7 +111,7 @@ public class PlayerController : MonoBehaviour {
 	- Double click on CameraController script to modify it
 	- Once you're done making the script, drag the script into the camera's inspector menu
 	- Drag the player object into the Player slot of the script submenu located on the Inspector Window
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/addingObjectToCamera.gif)
+	[alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/addingObjectToCamera.gif)
 
 ```C#
 using System.Collections;
@@ -153,7 +149,7 @@ public class CameraController : MonoBehaviour {
 	- Under "Assets" > "Prefabs" you will find a prebuilt walls prefab
 	- Drag the wall into the Scene view
 	- Position it so that there is a border on the plane
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/createBorder.gif)
+
 		
 14. Create Collectables 
 	- On the Hierarcy Window create an empty object (right click > "Create Empty")
@@ -182,9 +178,16 @@ public class Rotator : MonoBehaviour {
 }
 ```
 	
-15. Add collisions
+15. Make the targets disappear when you collide with them
 	- Click Player in the Hierarchy Window
 	- Select the PlayerController script in the Inspector Window and edit it (Gear icon > "Edit Script")
+	- Select the target prefab from the Project Window
+	- Under the Inspector Window click "Tag" > "Add Tag"
+	- Select the plus button and name the tag "Pick Up", or whatever you put as a string in the newly created function
+	- Add the newly created tag to the target prefab and check "Is Trigger" under the Box Collider submenu
+		- If done correctly, this will add the tag to all of the prefabs you've placed on the scene
+	
+	
 ```C#
 using System.Collections;
 using System.Collections.Generic;
@@ -222,11 +225,12 @@ public class PlayerController : MonoBehaviour {
 	public float speed;	//speed will control how fast the player is moving
 				//When you create a public varible it will show up in Unity editor.
 	
-	//Called when player object first touches a trigger collider
+	//Called when player object touches a trigger collider
 	void OnTriggerEnter(Collider other) {
-		Destroy(other.gameObject);
-	}
-						
+		if (other.gameObject.CompareTag ("Pick Up")) {	//We test if the tag is the same as the string value "Pick Up"
+			other.gameObject.setActive (false);	//If true then we will deactive the game object
+		}
+	}				
 }
 ```	
 we have a game!!!
