@@ -16,13 +16,14 @@ We have provided a packet of assets to help build a rolling the ball tutorial.
 	- Once you've created a new project, navigate to the toolbar of your Unity window and
 	click "Assets" > "Import Package" > "Custom Package"
 	- Open the Unity Package that you you installed from GitHub. Click "Import"
-
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/importPacket.gif)
+	
 4. Go back to your Unity3D window and create a new Scene
 	- On the toolbar, click "File" > "New Scene"
 	- Then save the scene as a new scene ("File" > "Save Scene As")
 	- Save your scene under "Assets" > "Scenes"
 	- Scenes contain your objects. Think of them as levels where your objects are present.
-
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/newScene.gif)
 5. Create the floor
 	- Right click the Hierarchy Window. 
 	- Click "GameObject" > "3D Object" > "Plane"
@@ -35,11 +36,13 @@ We have provided a packet of assets to help build a rolling the ball tutorial.
 	- Click "GameObject" > "3D Object" > "Sphere"
 	- Name the sphere "Player"
 	- Change the y position fo the sphere from 0 to 0.5
-
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/createPlayer.gif)
+	
 7. Add a Rigidbody to the player
 	- This will allow the player to have physics
 	- With the player selected, go to the Inspector Window and click "Add Component" > 
 	"Physics" > "Rigidbody"
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/addRigidBody.gif)
 	
 8. Change the color of the plane to have some contrast between the player and the ground
 	- Navigate to the Project Window
@@ -149,7 +152,7 @@ public class CameraController : MonoBehaviour {
 	- Under "Assets" > "Prefabs" you will find a prebuilt walls prefab
 	- Drag the wall into the Scene view
 	- Position it so that there is a border on the plane
-
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/createBorder.gif)
 		
 14. Create Collectables 
 	- On the Hierarcy Window create an empty object (right click > "Create Empty")
