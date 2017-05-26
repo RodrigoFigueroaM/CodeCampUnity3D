@@ -154,7 +154,7 @@ public class CameraController : MonoBehaviour {
 	- Navigate to your Project Window
 	- Under "Assets" > "Prefabs" you will find a prebuilt walls prefab
 	- Drag the wall into the Scene view
-	- Position it so that there is a border on the plane
+	- Position it so that there is a border on the plane and adjust the scale if needed
 	<img src ="screenshots/createBorder.gif"/>
 	
 		
