@@ -23,7 +23,8 @@ We have provided a packet of assets to help build a rolling the ball tutorial.
 	- Then save the scene as a new scene ("File" > "Save Scene As")
 	- Save your scene under "Assets" > "Scenes"
 	- Scenes contain your objects. Think of them as levels where your objects are present.
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/newScene.gif)
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/NewScene.gif)
+	
 5. Create the floor
 	- Right click the Hierarchy Window. 
 	- Click "GameObject" > "3D Object" > "Plane"
@@ -114,7 +115,7 @@ public class PlayerController : MonoBehaviour {
 	- Double click on CameraController script to modify it
 	- Once you're done making the script, drag the script into the camera's inspector menu
 	- Drag the player object into the Player slot of the script submenu located on the Inspector Window
-	[alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/addingObjectToCamera.gif)
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/addingObjectToCamera.gif)
 
 ```C#
 using System.Collections;
