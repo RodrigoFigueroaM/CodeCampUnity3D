@@ -51,14 +51,9 @@ We have provided a packet of assets to help build a rolling the ball tutorial.
 	- Navigate to the Project Window
 	- Click "Assets" > "Scripts"
 	- Double click on PlayerController script to modify it
-	- Once you're done making the script, drag it into the player's inspector menu
-	- Go into the Inspector Window and modify the movement speed
-		- Select the player and under the Inspector Window there is a Script submenu named 
-		Player Controller
-		- Modify the value of "Speed"
-		- We recommend a value of 10
 	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/addScript.gif)
-	
+	- Once you're done making the script, drag it into the player's inspector menu
+		
 ```C#
 using System.Collections;
 using System.Collections.Generic;
@@ -98,19 +93,25 @@ public class PlayerController : MonoBehaviour {
 						
 }
 ```
-
+	- Go into the Inspector Window and modify the movement speed
+		- Select the player and under the Inspector Window there is a Script submenu named 
+		Player Controller
+		- Modify the value of "Speed"
+		- We recommend a value of 10
 ![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/changeSpeed.gif)
 
 12. Position the main Camera
 	- Navigate to the Hierarchy Window and position and rotate your camera so that you have a
-	bird's eye view of the player
+	bird's eye view of the player!
+	[alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/changeCameraPosition.gif)
+
 	- Now we need to make the camera follow the player
 	- Navigate to the Project Window
 	- Click "Assets" > "Scripts"
 	- Double click on CameraController script to modify it
 	- Once you're done making the script, drag the script into the camera's inspector menu
 	- Drag the player object into the Player slot of the script submenu located on the Inspector Window
-![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/changeCameraPosition.gif)
+	[alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/addingObjectToCamera.gif)
 
 ```C#
 using System.Collections;
