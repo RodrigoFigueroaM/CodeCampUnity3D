@@ -16,7 +16,7 @@ We have provided a packet of assets to help build a rolling the ball tutorial.
 	- Once you've created a new project, navigate to the toolbar of your Unity window and
 	click "Assets" > "Import Package" > "Custom Package"
 	- Open the Unity Package that you you installed from GitHub. Click "Import"
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/importPacket.gif)
+	<img src ="https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/importPacket.gif">
 	
 4. Go back to your Unity3D window and create a new Scene
 	- On the toolbar, click "File" > "New Scene"
