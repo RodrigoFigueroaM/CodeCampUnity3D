@@ -105,8 +105,8 @@ public class PlayerController : MonoBehaviour {
 
 12. Position the main Camera
 	- Navigate to the Hierarchy Window and position and rotate your camera so that you have a
-	bird's eye view of the player!
-	[alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/changeCameraPosition.gif)
+	bird's eye view of the player
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/changeCameraPosition.gif)
 
 	- Now we need to make the camera follow the player
 	- Navigate to the Project Window
