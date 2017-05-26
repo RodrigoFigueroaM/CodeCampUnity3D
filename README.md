@@ -23,7 +23,7 @@ We have provided a packet of assets to help build a rolling the ball tutorial.
 	- Then save the scene as a new scene ("File" > "Save Scene As")
 	- Save your scene under "Assets" > "Scenes"
 	- Scenes contain your objects. Think of them as levels where your objects are present.
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/NewScene.gif)
+	<img src =https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/NewScene.gif/>
 	
 5. Create the floor
 	- Right click the Hierarchy Window. 
