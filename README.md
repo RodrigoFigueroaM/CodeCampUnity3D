@@ -97,12 +97,12 @@ public class PlayerController : MonoBehaviour {
 						
 }
 ```
-	- Go into the Inspector Window and modify the movement speed
-		- Select the player and under the Inspector Window there is a Script submenu named 
-		Player Controller
-		- Modify the value of "Speed"
-		- We recommend a value of 10
-	<img src ="screenshots/changeSpeed.gif"/>
+- Go into the Inspector Window and modify the movement speed
+- Select the player and under the Inspector Window there is a Script submenu named 
+Player Controller
+- Modify the value of "Speed"
+- We recommend a value of 10
+<img src ="screenshots/changeSpeed.gif"/>
 
 12. Position the main Camera
 	- Navigate to the Hierarchy Window and position and rotate your camera so that you have a
