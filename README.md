@@ -58,7 +58,7 @@ We have provided a packet of assets to help build a rolling the ball tutorial.
 	<img src ="screenshots/addScript.gif"/>
 	- Once you're done making the script, drag it into the player's inspector menu
 		
-```C#
+```csharp
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -118,7 +118,8 @@ public class PlayerController : MonoBehaviour {
 	- Drag the player object into the Player slot of the script submenu located on the Inspector Window
 	<img src ="screenshots/addingObjectToCamera.gif"/>
 
-```C#
+```csharp
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -167,7 +168,8 @@ public class CameraController : MonoBehaviour {
 	- Arrange the targets to your liking
 	<img src ="screenshots/dragDropTarget.gif"/>
 	-These targets have the following script to make them rotate:
-```C#
+```csharp
+
 using UnityEngine;
 using System.Collections;
 
@@ -194,7 +196,8 @@ public class Rotator : MonoBehaviour {
 		- If done correctly, this will add the tag to all of the prefabs you've placed on the scene
 	
 	
-```C#
+```csharp
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
