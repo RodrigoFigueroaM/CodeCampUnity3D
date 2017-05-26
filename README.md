@@ -45,6 +45,7 @@ We have provided a packet of assets to help build a rolling the ball tutorial.
 	- Navigate to the Project Window
 	- Click "Assets" > "Materials"
 	- Click and drag a color onto the plane
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/changeGroundColor.gif)
 
 9. Start making a script to apply physics to the sphere
 	- Navigate to the Project Window
@@ -56,6 +57,8 @@ We have provided a packet of assets to help build a rolling the ball tutorial.
 		Player Controller
 		- Modify the value of "Speed"
 		- We recommend a value of 10
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/addScript.gif)
+	
 ```C#
 using System.Collections;
 using System.Collections.Generic;
@@ -96,6 +99,8 @@ public class PlayerController : MonoBehaviour {
 }
 ```
 
+![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/changeSpeed.gif)
+
 12. Position the main Camera
 	- Navigate to the Hierarchy Window and position and rotate your camera so that you have a
 	bird's eye view of the player
@@ -105,6 +110,7 @@ public class PlayerController : MonoBehaviour {
 	- Double click on CameraController script to modify it
 	- Once you're done making the script, drag the script into the camera's inspector menu
 	- Drag the player object into the Player slot of the script submenu located on the Inspector Window
+![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/changeCameraPosition.gif)
 
 ```C#
 using System.Collections;
@@ -152,6 +158,7 @@ public class CameraController : MonoBehaviour {
 	- Place targets within the Collectables object
 		- You can find targets under "Assets" > "Prefabs" > "Targets"
 	- Arrange the targets to your liking
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/dragDropTarget.gif)
 	-These targets have the following script to make them rotate:
 ```C#
 using UnityEngine;
