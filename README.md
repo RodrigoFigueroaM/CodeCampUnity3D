@@ -5,7 +5,7 @@ We have provided a packet of assets to help build a rolling the ball tutorial.
 ## Steps
 1. Click "Clone or Download" > "Download ZIP" to download the Unity Package
 	- Extract the contents of the ZIP
-	- Note when your extracted it. You will be using this for later
+	- Note where your extracted it. You will be using this for later
 
 2. Create new project in Unity3D
 	- Launch Unity and click "NEW"
@@ -238,7 +238,7 @@ public class PlayerController : MonoBehaviour {
 	//Called when player object touches a trigger collider
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.CompareTag ("Pick Up")) {	//We test if the tag is the same as the string value "Pick Up"
-			other.gameObject.setActive (false);	//If true then we will deactive the game object
+			other.gameObject.SetActive (false);	//If true then we will deactive the game object
 		}
 	}				
 }
