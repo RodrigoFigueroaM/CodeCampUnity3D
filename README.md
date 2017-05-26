@@ -224,29 +224,4 @@ public class PlayerController : MonoBehaviour {
 						
 }
 ```	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-			other.gameObject.SetActive (false);
-		}
-	}	 
-
-——————————————————————————————————————————————————————————————————————————————————————————
-
-	
 we have a game!!!
