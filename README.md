@@ -98,14 +98,14 @@ public class PlayerController : MonoBehaviour {
 }
 ```
 10. Modify the movement speed
-- Go into the Inspector Window and modify the movement speed
-- Select the player and under the Inspector Window there is a Script submenu named 
-Player Controller
-- Modify the value of "Speed"
-- We recommend a value of 10
-<img src ="screenshots/changeSpeed.gif"/>
+	- Go into the Inspector Window and modify the movement speed
+	- Select the player and under the Inspector Window there is a Script submenu named 
+	Player Controller
+	- Modify the value of "Speed"
+	- We recommend a value of 10
+	<img src ="screenshots/changeSpeed.gif"/>
 
-12. Position the main Camera
+11. Position the main Camera
 	- Navigate to the Hierarchy Window and position and rotate your camera so that you have a
 	bird's eye view of the player!
 	<img src ="screenshots/changeCameraPosition.gif"/>
@@ -149,7 +149,7 @@ public class CameraController : MonoBehaviour {
 }
 ```
 
-13. Create a border to prevent the ball from falling off the plane
+12. Create a border to prevent the ball from falling off the plane
 	- Navigate to your Project Window
 	- Under "Assets" > "Prefabs" you will find a prebuilt walls prefab
 	- Drag the wall into the Scene view
@@ -157,7 +157,7 @@ public class CameraController : MonoBehaviour {
 	<img src ="screenshots/createBorder.gif"/>
 	
 		
-14. Create Collectables 
+13. Create Collectables 
 	- On the Hierarcy Window create an empty object (right click > "Create Empty")
 	- Name this object "Collectables"
 		- This object is going to be used as a folder to store targets
@@ -184,7 +184,7 @@ public class Rotator : MonoBehaviour {
 }
 ```
 	
-15. Make the targets disappear when you collide with them
+14. Make the targets disappear when you collide with them
 	- Click Player in the Hierarchy Window
 	- Select the PlayerController script in the Inspector Window and edit it (Gear icon > "Edit Script")
 	- Select the target prefab from the Project Window
