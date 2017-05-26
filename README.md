@@ -1,91 +1,231 @@
 # CodeCampUnity3D Workshop
-set of assets to help build a rolling the ball tutorial.
+Tutorial for a CodeCamp 2017 workshop on unity 3D.
+We have provided a packet of assets to help build a rolling the ball tutorial.
 
-![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/screenshots)
-```c#
-source CurvesEnv/bin/activate
+## Steps
+1. Click "Clone or Download" > "Download ZIP" to download the Unity Package
+	- Extract the contents of the ZIP
+	- Note when your extracted it. You will be using this for later
+
+2. Create new project in Unity3D
+	- Launch Unity and click "NEW"
+	- Name your project and select a location
+	- Click "Create Project"
+
+3. Import the Unity Package
+	- Once you've created a new project, navigate to the toolbar of your Unity window and
+	click "Assets" > "Import Package" > "Custom Package"
+	- Open the Unity Package that you you installed from GitHub. Click "Import"
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/importPacket.gif)
+	
+4. Go back to your Unity3D window and create a new Scene
+	- On the toolbar, click "File" > "New Scene"
+	- Then save the scene as a new scene ("File" > "Save Scene As")
+	- Save your scene under "Assets" > "Scenes"
+	- Scenes contain your objects. Think of them as levels where your objects are present.
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/newScene.gif)
+5. Create the floor
+	- Right click the Hierarchy Window. 
+	- Click "GameObject" > "3D Object" > "Plane"
+	- Name he plane "Ground"
+	- Change the x and z scale of the plane to 2.0
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/createPlane.gif)
+	
+6. Create the player
+	- Right click the Hierarchy Window. 
+	- Click "GameObject" > "3D Object" > "Sphere"
+	- Name the sphere "Player"
+	- Change the y position fo the sphere from 0 to 0.5
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/createPlayer.gif)
+	
+7. Add a Rigidbody to the player
+	- This will allow the player to have physics
+	- With the player selected, go to the Inspector Window and click "Add Component" > 
+	"Physics" > "Rigidbody"
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/addRigidBody.gif)
+	
+8. Change the color of the plane to have some contrast between the player and the ground
+	- Navigate to the Project Window
+	- Click "Assets" > "Materials"
+	- Click and drag a color onto the plane
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/changeGroundColor.gif)
+
+9. Start making a script to apply physics to the sphere
+	- Navigate to the Project Window
+	- Click "Assets" > "Scripts"
+	- Double click on PlayerController script to modify it
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/addScript.gif)
+	- Once you're done making the script, drag it into the player's inspector menu
+		
+```C#
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour {
+
+	//Ridgidbody used to apply physics to object
+	//Varible rb will hold reference to the rigidbody we want to access (in this case the sphere's rigidbody component)
+	private Rigidbody rb;
+
+	//Start function contains code that is called on the first frame the script is active
+	//First function that is called
+	void Start() {
+		rb = GetComponent<Rigidbody> ();	//finds and returns a reference to the attatched ridgid body
+	}
+
+	//called just before performing any physics calculations
+	//code that controls physics goes in here
+	void FixedUpdate () {
+		
+		float moveHorizontal = Input.GetAxis ("Horizontal");	//Input class is used to get input from the player.
+									//GetAxis method returns the values of the axis. Can choose which axis
+		float moveVertical = Input.GetAxis ("Vertical");
+
+		Vector3 movement = new Vector3 (moveHorizontal, 0, moveVertical);	//Need a Vector3 to store values for applying physics to object
+											//Vector3 holds 3 decimal values (x,y,z). In our case we only want to move
+											//on x and z axis. Useful for tasks such as moving around a 3D enviroment
+
+
+		rb.AddForce (movement * speed);		//AddForce method applies a force to object
+				  				
+	}
+
+	public float speed;	//speed will control how fast the player is moving
+				//When you create a public varible it will show up in Unity editor.
+						
+}
 ```
-steps
-1.- create new project
-2.- add the assets folder to project
-3.- save scene under scenes 
-4.- create plane. 
-	* GameObject->3D Object -> Plane
-	* change dimensions of plane 
-	* under inspector change scale  of plane x and z to 2.0
-		(SCREENSHOT)
-5.- create player 
-	* GameObject-> 3D Object -> Sphere
-	* change y position of sphere from 0 to 0.5 (SCREENSHOTS TO SHOW DIFFERENCE)
-	* add rigid body through inspector 
-6.- change color of plane.
-	* drag and drop the Ground material onto the plane (gif)
-7.- add script to player
-	* under inspector add script to player(sphere)
-8.- start scripting
-	double click on PlayerController script
-	I have provided a way to get the Rigid body already included in the sphere player
-	*** we are using Fixed update because we will be calling this function every frame rate
-	include input so we can move around.
-——————————————————————————————————————————————————————————————————————————————————————————
-	void FixedUpdate ()
-	{	
-float horizontal = Input.GetAxis ("Horizontal");
-		float vertical = Input.GetAxis ("Vertical");
+	- Go into the Inspector Window and modify the movement speed
+		- Select the player and under the Inspector Window there is a Script submenu named 
+		Player Controller
+		- Modify the value of "Speed"
+		- We recommend a value of 10
+![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/changeSpeed.gif)
 
-		Vector3 movement = new Vector3 (horizontal, 0.0f, vertical);
+12. Position the main Camera
+	- Navigate to the Hierarchy Window and position and rotate your camera so that you have a
+	bird's eye view of the player!
+	[alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/changeCameraPosition.gif)
 
-		rb.AddForce (movement * speed);
+	- Now we need to make the camera follow the player
+	- Navigate to the Project Window
+	- Click "Assets" > "Scripts"
+	- Double click on CameraController script to modify it
+	- Once you're done making the script, drag the script into the camera's inspector menu
+	- Drag the player object into the Player slot of the script submenu located on the Inspector Window
+	[alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/addingObjectToCamera.gif)
+
+```C#
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraController : MonoBehaviour {
+
+	//Initialize reference to player object
+	public GameObject player;
+
+	//holds offset value (distance between player and the camera)
+	private Vector3 offset;
+
+	// Remember, this is called first. Used for initialization
+	void Start () {
+		
+			 //camera position      player position
+		offset = transform.position - player.transform.position;	//finds the distance between player and camera by
+										//subtracting their transform positions (coordinates)
 	}
-——————————————————————————————————————————————————————————————————————————————————————————
-	to get input we use Input get Axis this allows to use AWSD and arrows for movement
-
-	we have o create a new vector to move out y is = 0 because we are not moving in the y direction
 	
-	add the movement force 
-9.- change speed public field in inspector(GIF)
-10.- test it out press play 
-11.- camera need to follow ball 
-	* position camera to above the player sphere position 
-	* select camera and transform to position 0 , 10 , 0; then rotate 75 on x axis(GIF)
-	* add script to camera to follow ball
-	* inspector -> add component-> CameraController
-	* explanation?
-
-	* add sphere to public field on camera inspector (GIF)
-——————————————————————————————————————————————————————————————————————————————————————————
-
-void Start ()
-	{
-		distance = this.transform.position - go.transform.position;
-	}
-
-void LateUpdate ()
-	{
-		this.transform.position = go.transform.position + distance;
-	}
-——————————————————————————————————————————————————————————————————————————————————————————
-
-	* test it out press play 
-
-12.- Drag and drop walls 
-	adjust walls slightly x =0.5193725 y = 1 z = 2.8385
-
-13.- add targets (drag and drop gif )
-14.- pick up targets 
-	* add to PlayerController script
-	*add tag to prefab (gif)
- 	*add tag to public field——————————————————————————————————————————————————————————————————————————————————————————
-
-	void OnTriggerEnter( Collider other)
-	{
-		if (other.gameObject.CompareTag (tag))
-		{
-			other.gameObject.SetActive (false);
-		}
-	}	 
-
-——————————————————————————————————————————————————————————————————————————————————————————
-
+	// LateUpdate is called once per frame
+	void LateUpdate () {
 	
+		transform.position = player.transform.position + offset;	//Called every frame. As we move our player with our keyboard,
+										//the camera is moved each frame to keep aligned with the player
+										//object
+	}
+}
+```
+
+13. Create a border to prevent the ball from falling off the plane
+	- Navigate to your Project Window
+	- Under "Assets" > "Prefabs" you will find a prebuilt walls prefab
+	- Drag the wall into the Scene view
+	- Position it so that there is a border on the plane
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/createBorder.gif)
+		
+14. Create Collectables 
+	- On the Hierarcy Window create an empty object (right click > "Create Empty")
+	- Name this object "Collectables"
+		- This object is going to be used as a folder to store targets
+	- Reset the empty object's coordinates by clicking the gear icon > "Reset" on he Transform submenu
+	- Place targets within the Collectables object
+		- You can find targets under "Assets" > "Prefabs" > "Targets"
+	- Arrange the targets to your liking
+	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/dragDropTarget.gif)
+	-These targets have the following script to make them rotate:
+```C#
+using UnityEngine;
+using System.Collections;
+
+public class Rotator : MonoBehaviour {
+	
+	// Update is called once per frame
+	void Update () {
+
+		transform.Rotate (new Vector3 (15, 30, 45) * Time.deltaTime);	//transform is used to access the position, rotation, and scale of the object.
+										//Rotate method is used to apply a rotation on the x, y, z axis.
+										//We multiply the vector by Time.deltaTime to keep the rotation smooth and framerate independent
+				
+	}
+}
+```
+	
+15. Add collisions
+	- Click Player in the Hierarchy Window
+	- Select the PlayerController script in the Inspector Window and edit it (Gear icon > "Edit Script")
+```C#
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour {
+
+	//Ridgidbody used to apply physics to object
+	//Varible rb will hold reference to the rigidbody we want to access (in this case the sphere's rigidbody component)
+	private Rigidbody rb;
+
+	//Start function contains code that is called on the first frame the script is active
+	//First function that is called
+	void Start() {
+		rb = GetComponent<Rigidbody> ();	//finds and returns a reference to the attatched ridgid body
+	}
+
+	//called just before performing any physics calculations
+	//code that controls physics goes in here
+	void FixedUpdate () {
+		
+		float moveHorizontal = Input.GetAxis ("Horizontal");	//Input class is used to get input from the player.
+									//GetAxis method returns the values of the axis. Can choose which axis
+		float moveVertical = Input.GetAxis ("Vertical");
+
+		Vector3 movement = new Vector3 (moveHorizontal, 0, moveVertical);	//Need a Vector3 to store values for applying physics to object
+											//Vector3 holds 3 decimal values (x,y,z). In our case we only want to move
+											//on x and z axis. Useful for tasks such as moving around a 3D enviroment
+
+
+		rb.AddForce (movement * speed);		//AddForce method applies a force to object
+				  				
+	}
+
+	public float speed;	//speed will control how fast the player is moving
+				//When you create a public varible it will show up in Unity editor.
+	
+	//Called when player object first touches a trigger collider
+	void OnTriggerEnter(Collider other) {
+		Destroy(other.gameObject);
+	}
+						
+}
+```	
 we have a game!!!
