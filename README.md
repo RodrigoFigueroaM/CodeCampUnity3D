@@ -168,6 +168,7 @@ public class CameraController : MonoBehaviour {
 	- Arrange the targets to your liking
 	<img src ="screenshots/dragDropTarget.gif"/>
 	-These targets have the following script to make them rotate:
+	
 ```csharp
 
 using UnityEngine;
