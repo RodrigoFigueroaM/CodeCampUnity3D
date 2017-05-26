@@ -15,50 +15,50 @@ We have provided a packet of assets to help build a rolling the ball tutorial.
 3. Import the Unity Package
 	- Once you've created a new project, navigate to the toolbar of your Unity window and
 	click "Assets" > "Import Package" > "Custom Package"
-	- Open the Unity Package that you you installed from GitHub. Click "Import"
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/importPacket.gif)
+	- Open the Unity Package (workshop) that you you installed from GitHub. Click "Import"
+	<img src ="screenshots/importPacket.gif"/>
 	
 4. Go back to your Unity3D window and create a new Scene
 	- On the toolbar, click "File" > "New Scene"
 	- Then save the scene as a new scene ("File" > "Save Scene As")
 	- Save your scene under "Assets" > "Scenes"
 	- Scenes contain your objects. Think of them as levels where your objects are present.
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/NewScene.gif)
+	<img src ="screenshots/NewScene.gif"/>
 	
 5. Create the floor
 	- Right click the Hierarchy Window. 
 	- Click "GameObject" > "3D Object" > "Plane"
 	- Name he plane "Ground"
 	- Change the x and z scale of the plane to 2.0
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/createPlane.gif)
+	<img src ="screenshots/createPlane.gif"/>
 	
 6. Create the player
 	- Right click the Hierarchy Window. 
 	- Click "GameObject" > "3D Object" > "Sphere"
 	- Name the sphere "Player"
 	- Change the y position fo the sphere from 0 to 0.5
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/createPlayer.gif)
+	<img src ="screenshots/createPlayer.gif"/>
 
 7. Add a Rigidbody to the player
 	- This will allow the player to have physics
 	- With the player selected, go to the Inspector Window and click "Add Component" > 
 	"Physics" > "Rigidbody"
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/addRigidBody.gif)
+	<img src ="screenshots/addRigidBody.gif"/>
 
 8. Change the color of the plane to have some contrast between the player and the ground
 	- Navigate to the Project Window
 	- Click "Assets" > "Materials"
 	- Click and drag a color onto the plane
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/changeGroundColor.gif)
+	<img src ="screenshots/changeGroundColor.gif"/>
 
 9. Start making a script to apply physics to the sphere
 	- Navigate to the Project Window
 	- Click "Assets" > "Scripts"
 	- Double click on PlayerController script to modify it
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/addScript.gif)
+	<img src ="screenshots/addScript.gif"/>
 	- Once you're done making the script, drag it into the player's inspector menu
 		
-```C#
+```csharp
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -97,17 +97,18 @@ public class PlayerController : MonoBehaviour {
 						
 }
 ```
+10. Modify the movement speed
 	- Go into the Inspector Window and modify the movement speed
-		- Select the player and under the Inspector Window there is a Script submenu named 
-		Player Controller
-		- Modify the value of "Speed"
-		- We recommend a value of 10
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/changeSpeed.gif)
+	- Select the player and under the Inspector Window there is a Script submenu named 
+	Player Controller
+	- Modify the value of "Speed"
+	- We recommend a value of 10
+	<img src ="screenshots/changeSpeed.gif"/>
 
-12. Position the main Camera
+11. Position the main Camera
 	- Navigate to the Hierarchy Window and position and rotate your camera so that you have a
 	bird's eye view of the player!
-	[alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/changeCameraPosition.gif)
+	<img src ="screenshots/changeCameraPosition.gif"/>
 
 	- Now we need to make the camera follow the player
 	- Navigate to the Project Window
@@ -115,9 +116,10 @@ public class PlayerController : MonoBehaviour {
 	- Double click on CameraController script to modify it
 	- Once you're done making the script, drag the script into the camera's inspector menu
 	- Drag the player object into the Player slot of the script submenu located on the Inspector Window
-	[alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/addingObjectToCamera.gif)
+	<img src ="screenshots/addingObjectToCamera.gif"/>
 
-```C#
+```csharp
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -148,15 +150,15 @@ public class CameraController : MonoBehaviour {
 }
 ```
 
-13. Create a border to prevent the ball from falling off the plane
+12. Create a border to prevent the ball from falling off the plane
 	- Navigate to your Project Window
 	- Under "Assets" > "Prefabs" you will find a prebuilt walls prefab
 	- Drag the wall into the Scene view
-	- Position it so that there is a border on the plane
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/createBorder.gif)
+	- Position it so that there is a border on the plane and adjust the scale if needed
+	<img src ="screenshots/createBorder.gif"/>
 	
 		
-14. Create Collectables 
+13. Create Collectables 
 	- On the Hierarcy Window create an empty object (right click > "Create Empty")
 	- Name this object "Collectables"
 		- This object is going to be used as a folder to store targets
@@ -164,9 +166,11 @@ public class CameraController : MonoBehaviour {
 	- Place targets within the Collectables object
 		- You can find targets under "Assets" > "Prefabs" > "Targets"
 	- Arrange the targets to your liking
-	![alt text](https://github.com/RodrigoFigueroaM/CodeCampUnity3D/blob/master/screenshots/dragDropTarget.gif)
+	<img src ="screenshots/dragDropTarget.gif"/>
 	-These targets have the following script to make them rotate:
-```C#
+	
+```csharp
+
 using UnityEngine;
 using System.Collections;
 
@@ -183,7 +187,7 @@ public class Rotator : MonoBehaviour {
 }
 ```
 	
-15. Make the targets disappear when you collide with them
+14. Make the targets disappear when you collide with them
 	- Click Player in the Hierarchy Window
 	- Select the PlayerController script in the Inspector Window and edit it (Gear icon > "Edit Script")
 	- Select the target prefab from the Project Window
@@ -193,7 +197,8 @@ public class Rotator : MonoBehaviour {
 		- If done correctly, this will add the tag to all of the prefabs you've placed on the scene
 	
 	
-```C#
+```csharp
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
