@@ -1,6 +1,7 @@
 # CodeCampUnity3D Workshop
-Tutorial for a CodeCamp 2017 workshop on unity 3D.
-We have provided a packet of assets to help build a rolling the ball tutorial.
+Tutorial for ACM-W CodeCamp 2017 workshop on unity 3D.
+We have provided a packet of assets to help build a rolling the ball tutorial from unity under 45 min.
+source(https://unity3d.com/learn/tutorials/projects/roll-ball-tutorial)
 
 ## Steps
 1. Click "Clone or Download" > "Download ZIP" to download the Unity Package
